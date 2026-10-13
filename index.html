@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Loops & Iteration</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background: #f3f6fb;
+        color: #182338;
+        margin: 0;
+        padding: 22px;
+      }
+      .container {
+        max-width: 1000px;
+        margin: auto;
+      }
+      h1 {
+        margin-bottom: 6px;
+      }
+      p {
+        color: #4b5870;
+        line-height: 1.5;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+        gap: 16px;
+      }
+      .card {
+        background: white;
+        border: 1px solid #dbe2ee;
+        border-radius: 12px;
+        padding: 18px;
+        box-shadow: 0 3px 12px #1823380a;
+      }
+      .card h2 {
+        font-size: 19px;
+        margin: 0 0 8px;
+      }
+      .card p {
+        margin: 6px 0 12px;
+        font-size: 14px;
+      }
+      textarea {
+        width: 100%;
+        min-height: 145px;
+        resize: vertical;
+        border: 1px solid #becadd;
+        border-radius: 8px;
+        padding: 12px;
+        font:
+          14px/1.5 Consolas,
+          monospace;
+        background: #f8fafc;
+        color: #10213c;
+      }
+      button {
+        border: 0;
+        background: #2563eb;
+        color: white;
+        font-weight: bold;
+        padding: 10px 18px;
+        border-radius: 7px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+      button:hover {
+        background: #174db7;
+      }
+      pre {
+        white-space: pre-wrap;
+        word-break: break-word;
+        background: #101e32;
+        color: #d8f6df;
+        padding: 13px;
+        min-height: 65px;
+        max-height: 280px;
+        overflow: auto;
+        border-radius: 8px;
+        font:
+          13px/1.55 Consolas,
+          monospace;
+      }
+      .full {
+        grid-column: 1/-1;
+      }
+      .hint {
+        font-size: 13px;
+        color: #64748b;
+      }
+      label {
+        font-weight: bold;
+        display: block;
+        margin: 8px 0 5px;
+      }
+      input {
+        border: 1px solid #becadd;
+        border-radius: 7px;
+        padding: 9px;
+        width: 100px;
+        font-size: 15px;
+      }
+      footer {
+        margin: 24px 0;
+        color: #64748b;
+        font-size: 13px;
+      }
+      @media (max-width: 480px) {
+        body {
+          padding: 12px;
+        }
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>JavaScript Loops &amp; Iteration</h1>
+      <p>
+        Simple practical examples. Edit the code in any box and click
+        <b>Run</b> to see its output. Use <code>console.log()</code> to print
+        results.
+      </p>
+      <div class="grid">
+        <section class="card">
+          <h2>1. For Loop</h2>
+          <p>Repeat statements with a counter.</p>
+          <textarea id="code1">
+for (let i = 1; i <= 5; i++) {
+  console.log(i);
+}</textarea
+          ><button onclick="runCode(1)">▶ Run</button>
+          <pre id="output1">Output appears here...</pre>
+        </section>
+        <section class="card">
+          <h2>2. While Loop</h2>
+          <p>Repeat while a condition is true.</p>
+          <textarea id="code2">
+let i = 1;
+while (i <= 5) {
+  console.log(i);
+  i++;
+}</textarea
+          ><button onclick="runCode(2)">▶ Run</button>
+          <pre id="output2">Output appears here...</pre>
+        </section>
+        <section class="card">
+          <h2>3. Do...While Loop</h2>
+          <p>Runs at least once before checking the condition.</p>
+          <textarea id="code3">
+let i = 1;
+do {
+  console.log(i);
+  i++;
+} while (i <= 5);</textarea
+          ><button onclick="runCode(3)">▶ Run</button>
+          <pre id="output3">Output appears here...</pre>
+        </section>
+        <section class="card">
+          <h2>4. Break &amp; Continue</h2>
+          <p>
+            <code>continue</code> skips a step; <code>break</code> ends the
+            loop.
+          </p>
+          <textarea id="code4">
+for (let i = 1; i <= 10; i++) {
+  if (i === 3) continue;
+  if (i === 7) break;
+  console.log(i);
+}</textarea
+          ><button onclick="runCode(4)">▶ Run</button>
+          <pre id="output4">Output appears here...</pre>
+        </section>
+        <section class="card">
+          <h2>5. Nested Loops</h2>
+          <p>A loop inside another loop.</p>
+          <textarea id="code5">
+for (let row = 1; row <= 3; row++) {
+  for (let col = 1; col <= 3; col++) {
+    console.log("Row " + row + ", Col " + col);
+  }
+}</textarea
+          ><button onclick="runCode(5)">▶ Run</button>
+          <pre id="output5">Output appears here...</pre>
+        </section>
+        <section class="card">
+          <h2>6. Multiplication Table (1–10)</h2>
+          <p>Change the number and generate its table from 1 to 10.</p>
+          <label for="tableNumber">Enter number</label
+          ><input id="tableNumber" type="number" value="5" /><textarea
+            id="code6"
+          >
+for (let i = 1; i <= 10; i++) {
+  console.log(number + " x " + i + " = " + (number * i));
+}</textarea
+          ><button onclick="runCode(6)">▶ Generate Table</button>
+          <pre id="output6">Output appears here...</pre>
+        </section>
+        <section class="card full">
+          <h2>7. FizzBuzz (1–50)</h2>
+          <p>
+            Multiples of 3 → Fizz, multiples of 5 → Buzz, multiples of both →
+            FizzBuzz.
+          </p>
+          <textarea id="code7">
+for (let i = 1; i <= 50; i++) {
+  if (i % 3 === 0 && i % 5 === 0) {
+    console.log("FizzBuzz");
+  } else if (i % 3 === 0) {
+    console.log("Fizz");
+  } else if (i % 5 === 0) {
+    console.log("Buzz");
+  } else {
+    console.log(i);
+  }
+}</textarea
+          ><button onclick="runCode(7)">▶ Run FizzBuzz</button>
+          <pre id="output7">Output appears here...</pre>
+        </section>
+      </div>
+     
+    </div>
+    <script>
+      // Runs the JavaScript written in a single editable box.
+      function runCode(id) {
+        let code = document.getElementById("code" + id).value;
+        let output = document.getElementById("output" + id);
+        let lines = [];
+        let steps = 0;
+        const limit = 10000;
+        // Stop obvious endless loops before running them.
+        if (/\b(?:while\s*\(\s*true\s*\)|for\s*\(\s*;\s*;\s*\))/.test(code)) {
+          output.textContent =
+            "Error: This looks like an infinite loop. Add a stopping condition.";
+          return;
+        }
+        function print() {
+          steps++;
+          if (steps > limit)
+            throw new Error(
+              "Too much output. Check your loop stopping condition.",
+            );
+          lines.push(Array.from(arguments).map(String).join(" "));
+        }
+        const consoleForCode = { log: print };
+        let number = Number(document.getElementById("tableNumber").value);
+        if (
+          id === 6 &&
+          (!Number.isFinite(number) ||
+            document.getElementById("tableNumber").value.trim() === "")
+        ) {
+          output.textContent = "Please enter a valid number.";
+          return;
+        }
+        try {
+          // Editable beginner code is evaluated only in this local demo.
+          // The passed console captures printed lines for the output area.
+          const execute = new Function("console", "number", code);
+          execute(consoleForCode, number);
+          output.textContent = lines.length
+            ? lines.join("\n")
+            : "Code ran successfully (no console.log output).";
+        } catch (error) {
+          output.textContent =
+            (lines.length ? lines.join("\n") + "\n" : "") +
+            "Error: " +
+            error.message;
+        }
+      }
+    </script>
+  </body>
+</html>
